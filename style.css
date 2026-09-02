@@ -40,11 +40,11 @@ body {
 .profileImage-container {
     width: 450px;
     height: 500px;
-   border-radius: 80%;
+    border-radius: 80%;
     background-image: url('assets/images/profile.png');
     background-size: cover;
     background-position: center;
-   z-index: 2;
+    z-index: 2;
     position: absolute;
 
     animation: moveRight 3.75s forwards;
@@ -52,7 +52,7 @@ body {
 
 @keyframes moveRight {
     0% {
-        left:40%;
+        left: 40%;
         top: 10%;
     }
 
@@ -61,17 +61,19 @@ body {
         top: 30%;
 
     }
-    
+
 }
+
 .content {
-    margin-top: 7%;
-    padding:  70px;
+    margin-top: 3%;
+    padding: 70px;
     position: relative;
     z-index: 1;
-   animation: moveAnimation 10s ease-in-out forwards;}
+    animation: moveAnimation 10s ease-in-out forwards;
+}
 
 .content h3 {
-    color:grey;
+    color: grey;
     font-size: 30px;
     margin: 0 0 20px;
 }
@@ -87,7 +89,7 @@ body {
 }
 
 .content h2 span {
-   color: #9b6cff;
+    color: #9b6cff;
     display: inline-flex;
     overflow: hidden;
     white-space: nowrap;
@@ -106,6 +108,7 @@ body {
     line-height: 1.7;
     max-width: 700px;
 }
+
 @keyframes moveAnimation {
     0% {
         top: -50px;
@@ -128,6 +131,7 @@ body {
         filter: blur(0);
     }
 }
+
 @keyframes typing {
     from {
         width: 0;
@@ -143,32 +147,97 @@ body {
         border-color: transparent;
     }
 }
+
 .button {
     width: 100px;
     height: 100px;
-    display:inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
- 
- 
-  outline: none;
-  margin: 3%;
-  justify-items: center;
-  justify-content: center;
-  color:  #9b6cff;
-  background-color: transparent;
-  border-color: #9b6cff;
-  border: 0.5;
-  border-radius: 100%;
-  
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+
+
+    outline: none;
+    margin: 3%;
+    justify-items: center;
+    justify-content: center;
+    color: #9b6cff;
+    background-color: transparent;
+    border-color: #9b6cff;
+    border: 0.5;
+    border-radius: 100%;
+
 }
 
-.button:hover{
-    color: black;
-    background-color:#9b6cff }
+.button:hover {
+    color: white;   transform: translateY(-10px);
+    background-color: #9b6cff
+    
+}
 
 .button:active {
-  background-color:transparent;
- 
- 
+    background-color: transparent;
+
+
+}
+
+.contact-button {
+    width: 200px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 24px;
+    margin-right: 3%;
+    gap: 10px;
+    margin-top: 3%;
+    color:  whitesmoke;
+    background-color: #9b6cff;
+    border:none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+   
+    transform: translateY(-5px);
+}
+
+.contact-button:active {
+  color: whitesmoke;
+    background-color: #9b6cff;
+    transform: translateY(2px);
+    border: none;
+}
+.actions-button {
+    width: 200px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 24px;
+    gap: 10px;
+    margin-right: 3%;
+    margin-top: 3%;
+    color: whitesmoke;
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.actions-button:hover {
+   
+    transform: translateY(-5px);
+   
+;
+}
+
+.actions-button:active {
+    color: #9b6cff;
+    background-color: transparent;
+    transform: translateY(2px);
 }
