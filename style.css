@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(2, 2, 26);
+    color: white;
+    margin: 0;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    justify-content: end;
+    border-bottom: 1px solid white;
+
+}
+
+.image-container {
+    width: 300px;
+    height: 200px;
+    background: red url('assets/images/profile.png') no-repeat top left / 5px 5px;
+    animation: mymove 5s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 300px;
+    height: 200px;
+
+    background: red url('assets/images/profile.png') no-repeat top left / 5px 5px;
+
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    0% {
+        background-position: top left;
+        background-size: 5px 5px;
+        background-color: red;
+    }
+
+    50% {
+        background-position: bottom right;
+        background-size: 50px 50px;
+        background-color: blue;
+    }
+
+    100% {
+        background-position: top left;
+        background-size: 5px 5px;
+        background-color: red;
+    }
+}
