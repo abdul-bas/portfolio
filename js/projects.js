@@ -52,11 +52,11 @@ const projects = [
     title: "Kiddo Learn Adventure",
     description:
       "An educational learning application for children featuring alphabet learning, quizzes, XP, coins, achievements, and interactive learning activities.",
-    image: "assets/images/kiddo-learn.jpg",
+    image: "assets/images/projects_images/kidoo_img.jpeg",
     category: "flutter",
     stack: ["Flutter", "Dart", "UI/UX", "Quiz", "Gamification"],
     live: "#",
-    code: "#"
+    code: "https://github.com/abdul-bas/meetup_app"
   },
 
   // =========================
@@ -64,60 +64,63 @@ const projects = [
   // =========================
 
   {
-    title: "Flutter Web Application",
+    title: "choice_x(seller)",
     description:
-      "A responsive web application developed with Flutter Web, focusing on clean UI, responsive layouts, reusable widgets, and smooth user interaction.",
-    image: "assets/images/flutter-web.jpg",
+      "ChoiceX Seller is a Flutter Web application that provides sellers with a secure dashboard to manage their online store. It includes secure authentication, complete product CRUD operations, order management, return and refund handling, and an integrated chat system for communication. The dashboard provides sellers with a centralized platform to manage products, customer interactions, and orders efficiently.",
+    image: "assets/images/projects_images/choice_x_seller.png",
     category: "flutter-web",
-    stack: ["Flutter Web", "Dart", "Responsive UI", "Firebase"],
-    live: "#",
-    code: "#"
+    stack: ["Flutter","Dart", "Firebase", "REST APIs"," Provider", "GetX"],
+    live: "https://choice8590-seller.web.app/",
+    code: "https://github.com/abdul-bas/choice_X-seller-"
   },
-
-  // =========================
-  // HTML & CSS
-  // =========================
-
-  {
-    title: "Responsive Portfolio Website",
+{
+    title: "choice_x(admin)",
     description:
-      "A modern responsive portfolio website designed using semantic HTML and CSS with responsive layouts, animations, custom sections, and clean UI.",
-    image: "assets/images/portfolio.jpg",
-    category: "html-css",
-    stack: ["HTML5", "CSS3", "Responsive Design"],
-    live: "#",
-    code: "#"
+      "ChoiceX Admin is a Flutter Web application that provides a secure admin dashboard for managing the entire e-commerce platform. It includes secure authentication, product and category management with complete CRUD operations, user and seller management, order monitoring, return and refund management, and promotional features such as brand management and coupon management. The dashboard provides administrators with centralized control over products, categories, brands, users, sellers, orders, refunds, and promotional activities",
+    image: "assets/images/projects_images/choice_x_admin.png",
+    category: "flutter-web",
+    stack: ["Flutter","Dart", "Firebase", "REST APIs"," Provider", ],
+    live: "https://choice8590-admi.web.app/",
+    code: "https://github.com/abdul-bas/choice_X-admin-"
   },
-
-  // =========================
-  // HTML & CSS & JAVASCRIPT
-  // =========================
-
-  {
-    title: "JavaScript Web Application",
-    description:
-      "An interactive web application built with HTML, CSS, and JavaScript featuring dynamic content, DOM manipulation, event handling, and responsive UI.",
-    image: "assets/images/javascript-project.jpg",
-    category: "html-css-js",
-    stack: ["HTML5", "CSS3", "JavaScript", "DOM"],
-    live: "#",
-    code: "#"
-  },
+  
 
   // =========================
   // HTML & CSS & JAVASCRIPT & BOOTSTRAP
   // =========================
-
-  {
-    title: "Responsive Bootstrap Website",
-    description:
-      "A responsive website built using HTML, CSS, JavaScript, and Bootstrap with reusable components, responsive layouts, navigation, forms, and interactive elements.",
-    image: "assets/images/bootstrap-project.jpg",
+{
+  title: "7UP Website Clone",
+  description:
+    "A responsive website clone inspired by the 7UP brand, developed using HTML and CSS. Recreated the main layout, sections, navigation, and brand-focused design with a responsive interface.",
+  image: "assets/images/projects_images/7up.png",
     category: "bootstrap",
-    stack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    live: "#",
-    code: "#"
-  }
+  stack: ["HTML", "CSS"],
+  live: "https://abdul-bas.github.io/7up_clone/",
+  code: "https://github.com/abdul-bas/7up_clone"
+},
+
+{
+  title: "Kopiko Website Clone",
+  description:
+    "A responsive website clone inspired by the Kopiko brand, developed using HTML, CSS, JavaScript, and Bootstrap. Recreated the website layout with responsive sections, navigation, and interactive elements.",
+  image: "assets/images/projects_images/kopiko.png",
+  category: "bootstrap",
+  stack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+  live: "https://abdul-bas.github.io/kopiko_responsive_web/",
+  code: "https://github.com/abdul-bas/kopiko_responsive_web"
+},
+
+{
+  title: "Tesla Website Clone",
+  description:
+    "A responsive website clone inspired by Tesla, developed using HTML and CSS. Recreated the modern automotive-style layout with responsive sections, navigation, and clean user interface elements.",
+  image: "assets/images/projects_images/tesla.png",
+    category: "bootstrap",
+  stack: ["HTML", "CSS"],
+  live: "https://abdul-bas.github.io/tesla_clone/",
+  code: "https://github.com/abdul-bas/tesla_clone"
+}
+  
 ];
 
 // =========================
