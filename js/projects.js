@@ -10,7 +10,7 @@ const projects = [
       "Movie Review Hub is a responsive movie review application built with Flutter, designed with separate Admin and User roles. Users can explore movies, view detailed information, watch trailers, rate movies, write reviews, and interact through comments. Admins can manage movie content using dynamic CRUD operations. The application includes authentication and uses Hive for efficient local data storage, providing a smooth and responsive user experience",
     image: "assets/images/projects_images/movie_review_hub.png",
     category: "flutter",
-    stack: ["Flutter", "Dart", "Hive", 'SharedPreferences'],
+    stack: ["Flutter", "Dart", "Hive", "SharedPreferences"],
     live: "https://apkpure.net/review-hub/com.example.review_hub",
     code: "https://github.com/abdul-bas/movie_review_hub"
   },
@@ -21,7 +21,7 @@ const projects = [
       "ChoiceX is a full-stack e-commerce application developed with Flutter, focused on providing a smooth shopping experience for users. The user side allows customers to browse products, view product details, search and explore items, add products to the cart, manage their orders, and complete purchases through secure Stripe payment integration. Firebase is used for authentication and backend services, while the application follows a responsive and user-friendly interface for a seamless shopping experience",
     image: "assets/images/projects_images/choice_x.png",
     category: "flutter",
-    stack: ["Flutter","Dart", "Firebase", "REST APIs", "BLoC", "Provider",],
+    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "BLoC", "Provider"],
     live: "https://apkpure.net/choicex/com.example.coice",
     code: "https://github.com/abdul-bas/choiceX-user-"
   },
@@ -69,58 +69,56 @@ const projects = [
       "ChoiceX Seller is a Flutter Web application that provides sellers with a secure dashboard to manage their online store. It includes secure authentication, complete product CRUD operations, order management, return and refund handling, and an integrated chat system for communication. The dashboard provides sellers with a centralized platform to manage products, customer interactions, and orders efficiently.",
     image: "assets/images/projects_images/choice_x_seller.png",
     category: "flutter-web",
-    stack: ["Flutter","Dart", "Firebase", "REST APIs"," Provider", "GetX"],
+    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "Provider", "GetX"],
     live: "https://choice8590-seller.web.app/",
     code: "https://github.com/abdul-bas/choice_X-seller-"
   },
-{
+  {
     title: "choice_x(admin)",
     description:
       "ChoiceX Admin is a Flutter Web application that provides a secure admin dashboard for managing the entire e-commerce platform. It includes secure authentication, product and category management with complete CRUD operations, user and seller management, order monitoring, return and refund management, and promotional features such as brand management and coupon management. The dashboard provides administrators with centralized control over products, categories, brands, users, sellers, orders, refunds, and promotional activities",
     image: "assets/images/projects_images/choice_x_admin.png",
     category: "flutter-web",
-    stack: ["Flutter","Dart", "Firebase", "REST APIs"," Provider", ],
+    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "Provider"],
     live: "https://choice8590-admi.web.app/",
     code: "https://github.com/abdul-bas/choice_X-admin-"
   },
-  
 
   // =========================
   // HTML & CSS & JAVASCRIPT & BOOTSTRAP
   // =========================
-{
-  title: "7UP Website Clone",
-  description:
-    "A responsive website clone inspired by the 7UP brand, developed using HTML and CSS. Recreated the main layout, sections, navigation, and brand-focused design with a responsive interface.",
-  image: "assets/images/projects_images/7up.png",
+  {
+    title: "7UP Website Clone",
+    description:
+      "A responsive website clone inspired by the 7UP brand, developed using HTML and CSS. Recreated the main layout, sections, navigation, and brand-focused design with a responsive interface.",
+    image: "assets/images/projects_images/7up.png",
     category: "bootstrap",
-  stack: ["HTML", "CSS"],
-  live: "https://abdul-bas.github.io/7up_clone/",
-  code: "https://github.com/abdul-bas/7up_clone"
-},
+    stack: ["HTML", "CSS"],
+    live: "https://abdul-bas.github.io/7up_clone/",
+    code: "https://github.com/abdul-bas/7up_clone"
+  },
 
-{
-  title: "Kopiko Website Clone",
-  description:
-    "A responsive website clone inspired by the Kopiko brand, developed using HTML, CSS, JavaScript, and Bootstrap. Recreated the website layout with responsive sections, navigation, and interactive elements.",
-  image: "assets/images/projects_images/kopiko.png",
-  category: "bootstrap",
-  stack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-  live: "https://abdul-bas.github.io/kopiko_responsive_web/",
-  code: "https://github.com/abdul-bas/kopiko_responsive_web"
-},
-
-{
-  title: "Tesla Website Clone",
-  description:
-    "A responsive website clone inspired by Tesla, developed using HTML and CSS. Recreated the modern automotive-style layout with responsive sections, navigation, and clean user interface elements.",
-  image: "assets/images/projects_images/tesla.png",
+  {
+    title: "Kopiko Website Clone",
+    description:
+      "A responsive website clone inspired by the Kopiko brand, developed using HTML, CSS, JavaScript, and Bootstrap. Recreated the website layout with responsive sections, navigation, and interactive elements.",
+    image: "assets/images/projects_images/kopiko.png",
     category: "bootstrap",
-  stack: ["HTML", "CSS"],
-  live: "https://abdul-bas.github.io/tesla_clone/",
-  code: "https://github.com/abdul-bas/tesla_clone"
-}
-  
+    stack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    live: "https://abdul-bas.github.io/kopiko_responsive_web/",
+    code: "https://github.com/abdul-bas/kopiko_responsive_web"
+  },
+
+  {
+    title: "Tesla Website Clone",
+    description:
+      "A responsive website clone inspired by Tesla, developed using HTML and CSS. Recreated the modern automotive-style layout with responsive sections, navigation, and clean user interface elements.",
+    image: "assets/images/projects_images/tesla.png",
+    category: "bootstrap",
+    stack: ["HTML", "CSS"],
+    live: "https://abdul-bas.github.io/tesla_clone/",
+    code: "https://github.com/abdul-bas/tesla_clone"
+  }
 ];
 
 // =========================
@@ -142,10 +140,21 @@ function hasLink(url) {
 }
 
 // =========================
-// PROJECT CARD
+// ICON
 // =========================
 
-function cardTemplate(project) {
+function chevronIcon() {
+  return (
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
+  );
+}
+
+// =========================
+// PROJECT CARD (collapsed summary + expandable details)
+// =========================
+
+function cardTemplate(project, index) {
   const tagLabel = categoryLabels[project.category] || project.category;
 
   const stackChips = project.stack
@@ -161,26 +170,77 @@ function cardTemplate(project) {
     : "";
 
   return `
-    <article class="project-card">
-      <img
-        class="project-image"
-        src="${project.image}"
-        alt="${project.title} preview"
-        loading="lazy"
-      />
+    <article class="project-card" data-index="${index}" tabindex="0" role="button"
+      aria-expanded="false" aria-label="${project.title}, show details">
+      <div class="project-card-inner">
+        <div class="project-visual">
+          <img class="project-image" src="${project.image}" alt="${project.title} preview" loading="lazy" />
+       
+        </div>
 
-      <div class="project-body">
-        <span class="project-tag">${tagLabel}</span>
-        <h3 class="project-title">${project.title}</h3>
-        <p class="project-desc">${project.description}</p>
-        <div class="project-stack">${stackChips}</div>
-        <div class="project-actions">
-          ${liveButton}
-          ${codeButton}
+        <div class="project-summary">
+          <h3 class="project-title">${project.title}</h3>
+     
+          <span class="expand-toggle">View details ${chevronIcon()}</span>
+        </div>
+
+        <div class="project-details">
+          <div class="project-details-inner">
+             
+            <div class="project-details-content">
+              <div class="project-stack">${stackChips}</div>
+              <p class="project-desc">${project.description}</p>
+              <div class="project-actions">
+                ${liveButton}
+                ${codeButton}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </article>
   `;
+}
+
+// =========================
+// SCROLL-REVEAL ANIMATION
+// =========================
+
+let revealObserver = null;
+
+function setupRevealAnimation(grid) {
+  if (revealObserver) revealObserver.disconnect();
+
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("card-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  const cards = grid.querySelectorAll(".project-card");
+  cards.forEach((card, i) => {
+    card.style.transitionDelay = `${Math.min(i * 90, 360)}ms`;
+    // Negative animation-delay starts each card partway through its cycle,
+    // so the floating/hanging motion is already out of phase on load
+    // instead of every card syncing up on the same beat.
+    card.style.animationDelay = `${(i % 6) * -1.3}s`;
+    revealObserver.observe(card);
+  });
+}
+
+// =========================
+// EXPAND / COLLAPSE
+// =========================
+
+function toggleCard(card) {
+  const isExpanded = card.classList.toggle("expanded");
+  card.setAttribute("aria-expanded", isExpanded ? "true" : "false");
 }
 
 // =========================
@@ -197,17 +257,36 @@ function renderProjects(filter) {
       : projects.filter((project) => project.category === filter);
 
   grid.innerHTML = filtered.length
-    ? filtered.map(cardTemplate).join("")
+    ? filtered.map((project, index) => cardTemplate(project, index)).join("")
     : `<p class="empty-state">No projects in this category yet.</p>`;
+
+  setupRevealAnimation(grid);
 }
 
 // =========================
-// FILTER BUTTONS
+// EVENTS
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
   const filterRow = document.getElementById("filterRow");
-  if (!filterRow) return;
+  const grid = document.getElementById("projectsGrid");
+  if (!filterRow || !grid) return;
+
+  // Toggle expand/collapse — click or keyboard (Enter/Space) on the card,
+  // but let links inside the expanded details behave normally.
+  grid.addEventListener("click", (event) => {
+    if (event.target.closest("a")) return;
+    const card = event.target.closest(".project-card");
+    if (card) toggleCard(card);
+  });
+
+  grid.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const card = event.target.closest(".project-card");
+    if (!card) return;
+    event.preventDefault();
+    toggleCard(card);
+  });
 
   filterRow.addEventListener("click", (event) => {
     const button = event.target.closest(".filter-btn");
