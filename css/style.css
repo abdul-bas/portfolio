@@ -725,10 +725,10 @@ h2 span {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    margin-top: 20px;
+    
     margin-left: 40px;
     background: var(--bg);
-    padding: 88px 24px;
+    padding: 50px 24px 124px 88px;
     font-family: 'Inter', sans-serif;
     overflow: hidden; /* keep bg image from spilling out */
 }
