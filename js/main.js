@@ -53,8 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => navObserver.observe(section));
 
   // ---- Scroll-triggered reveal ----
-  // Skill cards get a staggered entrance; the delay is applied inline and
-  // cleared once the reveal finishes so it never leaks into hover transitions.
+  
   const skillCards = Array.from(document.querySelectorAll(".skills-grid .card"));
 
   const revealObserver = new IntersectionObserver(
