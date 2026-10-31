@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdul Basith — Flutter Developer-Portfolio</title>
+ <title>Abdul Basith | Flutter Developer</title>
   <meta name="description" content="Abdul Basith is a Flutter developer building responsive, user-friendly mobile and web applications." />
 
-  <link rel="stylesheet" href="css/style.css" />
+  
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -20,11 +20,14 @@
    
    <div></div>
     <nav class="nav-list" id="navList">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+     <a href="#home" class="active">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+
+<a href="#certificates">Certificates</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
     </nav>
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -96,15 +99,23 @@
   <section class="about" id="about">
   
     <div class="section-inner">
-      <div class="about-visual scroll-reveal">
-        <div class="about-visual-frame">
-          <img src="assets/images/mine_last.jpg" alt="Abdul Basith working on a laptop" />
-        </div>
-   <div class="about-visual-chip">
-  <span class="chip-dot"></span>
-  Flutter & Web Developer
+     <div class="about-visual scroll-reveal">
+  <div class="about-visual-frame">
+    <img src="assets/images/mine_last.jpg" alt="Abdul Basith working on a laptop" />
+  </div>
+
+  <!-- Badge over the photo -->
+  <img
+    class="about-visual-badge"
+    src="assets/images/Verified Badge (1).png"
+    alt="Brototype Certified Candidate badge"
+  />
+
+  <div class="about-visual-chip">
+    <span class="chip-dot"></span>
+    Flutter & Web Developer
+  </div>
 </div>
-      </div>
 
      <div class="about-content scroll-reveal">
 
@@ -150,83 +161,37 @@
   </section>
 
   <!-- ================= SKILLS ================= -->
+<section class="skills-wrap" id="skills">
+  <img class="skill-bg" src="assets/images/Skills_Cartoon_Icons-removebg-preview.png" alt="">
 
-  <section class="skills-wrap" id="skills">
-    <img class="skill-bg" src="assets/images/skills.png" alt="">
-    <div class="section-inner">
-      <div class="skills-header scroll-reveal">
+  <div class="section-inner">
+    <div class="skills-header scroll-reveal">
+      <div class="skills-header-text">
         <p class="eyebrow">What I work with</p>
         <h2>Ski<span>lls</span></h2>
         <div class="heading-rule"></div>
         <p class="skills-subtitle">
           Languages, frameworks, and tools I use to design, build, and ship mobile applications.
+          Hover or tap a skill to see the projects behind it.
         </p>
       </div>
 
-      <div class="skills-grid">
-
-        <div class="card scroll-reveal" tabindex="0">
-          <h3 class="card-title">Languages</h3>
-          <div class="card-details">
-            <ul class="skill-list">
-            <li><img src="https://api.iconify.design/logos:dart.svg" alt="" />Dart</li>
-            <li><img src="https://api.iconify.design/logos:javascript.svg" alt="" />JavaScript</li>
-            <li><img src="https://api.iconify.design/logos:html-5.svg" alt="" />HTML</li>
-            <li><img src="https://api.iconify.design/logos:css-3.svg" alt="" />CSS</li>
-          </ul>
-          </div>
+      <div class="skills-controls">
+        <div class="skills-stats" id="skills-stats"></div>
+        <div class="skills-filter" role="group" aria-label="Filter skills">
+          <button type="button" class="is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="used" aria-pressed="false"><i class="skill-dot"></i>In projects</button>
+          <button type="button" data-filter="learning" aria-pressed="false"><i class="skill-dot is-learning"></i>Familiar with</button>
         </div>
-
-        <div class="card scroll-reveal" tabindex="0">
-          <h3 class="card-title">Frameworks</h3>
-          <div class="card-details">
-            <ul class="skill-list">
-            <li><img src="https://api.iconify.design/logos:flutter.svg" alt="" />Flutter</li>
-            <li><img src="https://api.iconify.design/logos:bootstrap.svg" alt="" />Bootstrap</li>
-          </ul>
-          </div>
-        </div>
-
-        <div class="card scroll-reveal" tabindex="0">
-          <h3 class="card-title">State Management</h3>
-          <div class="card-details">
-            <ul class="skill-list">
-            <li><img src="https://api.iconify.design/mdi:layers-outline.svg?color=%2338bdf8" alt="" />Provider</li>
-            <li><img src="https://api.iconify.design/mdi:sitemap-outline.svg?color=%2338bdf8" alt="" />BLoC</li>
-            <li><img src="https://api.iconify.design/mdi:flash-outline.svg?color=%2338bdf8" alt="" />GetX</li>
-          </ul>
-          </div>
-        </div>
-
-        <div class="card scroll-reveal" tabindex="0">
-          <h3 class="card-title">Backend &amp; Storage</h3>
-          <div class="card-details">
-            <ul class="skill-list">
-            <li><img src="https://api.iconify.design/logos:firebase.svg" alt="" />Firebase</li>
-            <li><img src="https://api.iconify.design/mdi:beehive-outline.svg?color=%2338bdf8" alt="" />Hive</li>
-            <li><img src="https://api.iconify.design/mdi:cog-outline.svg?color=%2338bdf8" alt="" />SharedPreferences</li>
-            <li><img src="https://api.iconify.design/logos:sqlite.svg" alt="" />SQLite</li>
-            <li><img src="https://api.iconify.design/mdi:shield-lock-outline.svg?color=%2338bdf8" alt="" />Flutter Secure Storage</li>
-          </ul>
-          </div>
-        </div>
-
-        <div class="card scroll-reveal" tabindex="0">
-          <h3 class="card-title">Tools</h3>
-          <div class="card-details">
-            <ul class="skill-list">
-            <li><img src="https://api.iconify.design/logos:git-icon.svg" alt="" />Git</li>
-            <li><img src="https://api.iconify.design/mdi:github.svg?color=%23eef1fb" alt="" />GitHub</li>
-            <li><img src="https://api.iconify.design/logos:visual-studio-code.svg" alt="" />VS Code</li>
-            <li><img src="https://api.iconify.design/logos:figma.svg" alt="" />Figma</li>
-            <li><img src="https://api.iconify.design/logos:postman-icon.svg" alt="" />Postman</li>
-          </ul>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
+
+    <!-- cards are generated by skills.js -->
+    <div class="skills-grid scroll-reveal" id="skills-grid"></div>
+  </div>
+</section>
+
+
 
 <!-- ================= PROJECTS ================= -->
 <section class="projects-wrap" id="projects">
@@ -243,14 +208,85 @@
 
     <div class="filter-row scroll-reveal" id="filterRow">
       <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="featured">Featured Projects</button>
+      <button class="filter-btn" data-filter="mini">Mini Projects</button>
+      <button class="filter-btn" data-filter="other">Other Projects</button>
       <button class="filter-btn" data-filter="flutter">Flutter Apps</button>
       <button class="filter-btn" data-filter="flutter-web">Flutter Web</button>
-      <button class="filter-btn" data-filter="bootstrap">HTML, CSS, JS &amp; Bootstrap</button>
+     
     </div>
 
     <div class="projects-grid" id="projectsGrid"></div>
   </div>
 </section>
+
+
+
+
+<!-- ================= CERTIFICATES & ACADEMIC ACHIEVEMENTS ================= -->
+
+<section class="cert-wrap" id="certificates">
+  <img class="cert-bg" src="assets/images/Skills_Cartoon_Icons__2_-removebg-preview.png" alt="">
+  <div class="section-inner">
+
+    <div class="cert-header scroll-reveal">
+      <p class="eyebrow">Credentials</p>
+      <h2>Certificates <span>&amp; Academic Achievements</span></h2>
+      <div class="heading-rule"></div>
+      <p class="cert-subtitle">
+        Recognising my technical training, professional development, and academic qualifications.
+      </p>
+    </div>
+
+    <!-- filter buttons are generated from certificates-data.js -->
+    <div class="cert-filters scroll-reveal" id="certFilters" role="group" aria-label="Filter certificates"></div>
+
+    <!-- cards are generated from certificates-data.js -->
+    <div class="cert-grid" id="certGrid"></div>
+    <p class="cert-live" id="certLive" aria-live="polite"></p>
+  </div>
+
+  <!-- certificate preview (Google Drive viewer) -->
+  <dialog class="cert-dialog" id="certDialog" aria-labelledby="certDialogTitle">
+    <div class="cert-dialog-bar">
+      <h3 id="certDialogTitle"></h3>
+      <a class="cert-dialog-open" id="certDialogOpen" href="#" target="_blank" rel="noopener noreferrer">Open in new tab &#8599;</a>
+      <button type="button" class="cert-dialog-close" id="certDialogClose" aria-label="Close preview">&times;</button>
+    </div>
+    <iframe id="certDialogFrame" title="Certificate preview" loading="lazy" referrerpolicy="no-referrer"></iframe>
+    <p class="cert-dialog-note">Preview not loading? Use <strong>Open in new tab</strong> to see the original certificate.</p>
+  </dialog>
+</section>
+
+<!-- ================= EDUCATION & PROFESSIONAL DEVELOPMENT ================= -->
+<section class="edu-wrap" id="education">
+  <img class="edu-bg" src="assets/images/Skills_Cartoon_Icons-removebg-preview (1).png" alt="">
+  <div class="section-inner">
+
+    <div class="edu-header scroll-reveal">
+      <p class="eyebrow">My Journey</p>
+      <h2>Education <span>&amp; Professional Development</span></h2>
+      <div class="heading-rule"></div>
+      <p class="edu-subtitle">
+        My academic journey and professional training, reflecting my commitment
+        to continuous learning and technical growth.
+      </p>
+    </div>
+
+    <!-- timeline items are generated from education-data.js -->
+    <div class="edu-track" id="eduTrack">
+      <span class="edu-line" aria-hidden="true"><i class="edu-line-fill" id="eduFill"></i></span>
+      <ol class="edu-timeline" id="eduTimeline"></ol>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
 
   <!-- ================= CONTACT ================= -->
   <section class="contact-wrap" id="contact">
@@ -328,5 +364,21 @@
  <script src="js/skill.js"></script>
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/certificate.js"></script>
+  <script src="data/certificate_data.js"></script>
+  <script src="data/education_data.js"></script>
+    <script src="data/skills_data.js"></script>
+<script src="js/education.js"></script>
+<script src="data/project_data.js"></script>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/head_nav.css" />
+<link rel="stylesheet" href="css/about.css" />
+<link rel="stylesheet" href="css/certificates.css" />
+<link rel="stylesheet" href="css/education.css" />
+<link rel="stylesheet" href="css/contact.css" />
+<link rel="stylesheet" href="css/skills.css" />
+<link rel="stylesheet" href="css/projects.css" />
+
 </body>
 </html>

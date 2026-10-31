@@ -1,0 +1,79 @@
+
+/*
+   Header / Navigation
+   */
+
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+  padding: 1.1rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background var(--dur-fast) ease, box-shadow var(--dur-fast) ease,
+    padding var(--dur-fast) ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(10, 15, 31, 0.82);
+  backdrop-filter: blur(14px);
+  padding-block: 0.8rem;
+  box-shadow: 0 1px 0 var(--line-dark);
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--paper);
+  letter-spacing: 0.01em;
+}
+
+.brand span {
+  color: var(--sky);
+}
+
+.nav-list {
+  display: flex;
+  gap: clamp(1rem, 2vw, 2.2rem);
+}
+
+.nav-list a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  position: relative;
+  padding-block: 0.3rem;
+  transition: color var(--dur-fast) ease;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: var(--sky);
+  transition: width var(--dur-fast) var(--ease-out);
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  color: var(--paper);
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  color: var(--paper);
+  font-size: 1.4rem;
+  align-items: center;
+  justify-content: center;
+}
