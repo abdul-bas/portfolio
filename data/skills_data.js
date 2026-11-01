@@ -126,7 +126,7 @@ const SKILLS = [
   {
     title: 'State Management',
     items: [
-      s('BLoC / Cubit', 'mdi:sitemap-outline', ['choicex', 'thinksy', 'netflix', 'expenzia']),
+      s('BLoC ', 'mdi:sitemap-outline', ['choicex', 'thinksy', 'netflix', 'expenzia']),
       s('Provider', 'mdi:layers-outline', ['choicex', 'luxora']),
       s('GetX', 'mdi:flash-outline', ['choicex']),
     ]
@@ -166,7 +166,7 @@ const SKILLS = [
     title: 'Local Storage',
     items: [
       s('Hive', 'mdi:beehive-outline', ['movie']),
-      s('SQLite', 'logos:sqlite', [], 'Basic'),
+      s('SQLite', 'logos:sqlite', ['expenzia'], 'Basic'),
       s('SharedPreferences', 'mdi:cog-outline', ['choicex', 'movie']),
       s('Flutter Secure Storage', 'mdi:shield-lock-outline', [], 'Basic'),
     ]
@@ -175,12 +175,12 @@ const SKILLS = [
   {
     title: 'Architecture & Design Patterns',
     items: [
-      s('Feature-based Architecture', 'mdi:layers-triple-outline', ['choicex', 'thinksy']),
-      s('Clean Architecture', 'mdi:layers-outline', ['thinksy', 'expenzia']),
+    
+      s('Clean Architecture', 'mdi:layers-outline', ['thinksy', 'expenzia','netflix']),
       s('MVVM', 'mdi:view-dashboard-outline', ['luxora'], 'Basic'),
       s('MVC', 'mdi:view-grid-outline', [], 'Basic'),
       s('Repository Pattern', 'mdi:source-repository', ['thinksy', 'netflix', 'expenzia']),
-      s('Layered Architecture', 'mdi:format-list-group', ['netflix']),
+      s('Layered Architecture', 'mdi:format-list-group', ['netflix','choicex']),
     ]
   },
 
@@ -194,7 +194,7 @@ const SKILLS = [
       s('Android Studio', 'logos:android-icon', FLUTTER_APPS),
       s('VS Code', 'logos:visual-studio-code', ['clones', 'portfolio']),
       s('Postman', 'logos:postman-icon', [], 'Basic'),
-      s('Figma', 'logos:figma', ['expenzia']),
+      s('Figma', 'logos:figma', ['expenzia','netflix','choicex','movie','news','todo']),
       s('Object-Oriented Programming', 'mdi:cube-outline', FLUTTER_APPS),
       s('Data Structures & Algorithms', 'mdi:graph-outline', [], 'Fundamentals'),
       s('Debugging & Troubleshooting', 'mdi:bug-check-outline', FLUTTER_APPS),
