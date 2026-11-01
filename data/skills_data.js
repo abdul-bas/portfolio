@@ -1,57 +1,99 @@
 const PROJECTS = {
-    choicex: {
-      name: 'ChoiceX – E-Commerce Platform',
-      desc: 'Multi-vendor platform: Customer app, Seller web app and Admin web app on one Firebase backend',
-      links: [
-        { label: 'GitHub · User',   url: '' },
-        { label: 'GitHub · Seller', url: '' },
-        { label: 'GitHub · Admin',  url: '' },
-        { label: 'APK · Customer',  url: '' },
-        { label: 'Live · Seller',   url: '' },
-        { label: 'Live · Admin',    url: '' },
-      ],
-    },
-    movie: {
-      name: 'Movie Review Hub',
-      desc: 'Movie discovery and reviews with User and Admin roles, built local-first with Hive',
-      links: [
-        { label: 'GitHub', url: '' },
-        { label: 'APK',    url: '' },
-      ],
-    },
-    news: {
-      name: 'News App',
-      desc: 'Firebase Authentication, NewsAPI and Remote Config for country-based setup',
-      links: [{ label: 'GitHub', url: '' }],
-    },
-    todo: {
-      name: 'To-Do List App',
-      desc: 'Task manager with Firestore CRUD, due dates and completion status',
-      links: [{ label: 'GitHub', url: '' }],
-    },
-    native: {
-      name: 'Native Features',
-      desc: 'Flutter + Android native code over MethodChannel (GPS, camera, accelerometer)',
-      links: [{ label: 'GitHub', url: '' }],
-    },
-    clones: {
-      name: 'Responsive Website Clones',
-      desc: '7UP, Kopiko and Tesla clones in HTML, CSS, Bootstrap and JavaScript',
-      links: [
-        { label: 'GitHub · 7UP',    url: '' },
-        { label: 'GitHub · Kopiko', url: '' },
-        { label: 'GitHub · Tesla',  url: '' },
-        { label: 'Live · 7UP',      url: '' },
-        { label: 'Live · Kopiko',   url: '' },
-        { label: 'Live · Tesla',    url: '' },
-      ],
-    },
-    portfolio: {
-      name: 'Personal Portfolio',
-      desc: 'This website',
-      links: [],
-    },
-  };
+  choicex: {
+    name: 'ChoiceX – Multi-Vendor E-Commerce Platform',
+    desc: 'Full-stack e-commerce platform featuring Customer mobile app, Seller web app and Admin web app with a shared Firebase backend.',
+    links: [
+      { label: 'GitHub · Customer', url: '' },
+      { label: 'GitHub · Seller', url: '' },
+      { label: 'GitHub · Admin', url: '' },
+      { label: 'APK · Customer', url: '' },
+      { label: 'Live · Seller', url: '' },
+      { label: 'Live · Admin', url: '' },
+    ],
+  },
+
+  thinksy: {
+    name: 'Thinksy AI – AI Chat Application',
+    desc: 'AI-powered chat application integrating Google Gemini API, Firebase Authentication and conversation context with BLoC and Clean Architecture.',
+    links: [
+      { label: 'GitHub', url: '' },
+      { label: 'APK', url: '' },
+    ],
+  },
+
+  netflix: {
+    name: 'Netflix Clone – Movie Discovery App',
+    desc: 'Netflix-inspired movie discovery application featuring seven screens, TMDB API integration, movie listings and debounced search.',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/abdul-bas/court-click-mt' },
+      { label: 'APK', url: '' },
+    ],
+  },
+
+  expenzia: {
+    name: 'Expenzia – Expense Tracker',
+    desc: 'Expense management application featuring income and expense tracking, transaction history and dashboard insights, built using BLoC and Clean Architecture.',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/abdul-bas/Expenzia' },
+      { label: 'Figma', url: 'https://www.figma.com/design/WR6AeuIpBm5pI2i1RV7hYh/Flutter-Machine-Test--Copy-?t=YXs1U6DPGvo3rre3-0' },
+    ],
+  },
+
+  movie: {
+    name: 'Movie Review Hub',
+    desc: 'Movie discovery and review application with User and Admin roles, movie management, ratings and reviews using local storage.',
+    links: [
+      { label: 'GitHub', url: '' },
+      { label: 'APK', url: '' },
+    ],
+  },
+
+  news: {
+    name: 'News App',
+    desc: 'News application integrating Firebase Authentication, NewsAPI and Firebase Remote Config for country-based news settings.',
+    links: [
+      { label: 'GitHub', url: '' },
+    ],
+  },
+
+  todo: {
+    name: 'To-Do List App',
+    desc: 'Task management application with Firebase Cloud Firestore CRUD operations, due dates and completion tracking.',
+    links: [
+      { label: 'GitHub', url: '' },
+    ],
+  },
+
+  native: {
+    name: 'Flutter Native Integration',
+    desc: 'Exploration of Flutter and Android native integration using MethodChannel for GPS, camera and accelerometer features.',
+    links: [
+      { label: 'GitHub', url: '' },
+    ],
+  },
+
+  clones: {
+    name: 'Responsive Website Clones',
+    desc: 'Responsive website recreations of 7UP, Kopiko and Tesla using HTML, CSS, Bootstrap and JavaScript.',
+    links: [
+      { label: 'GitHub · 7UP', url: '' },
+      { label: 'GitHub · Kopiko', url: '' },
+      { label: 'GitHub · Tesla', url: '' },
+      { label: 'Live · 7UP', url: '' },
+      { label: 'Live · Kopiko', url: '' },
+      { label: 'Live · Tesla', url: '' },
+    ],
+  },
+
+  portfolio: {
+    name: 'Personal Portfolio',
+    desc: 'Personal portfolio showcasing Flutter projects, technical skills, certifications and development experience.',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/abdul-bas' },
+      { label: 'Live Website', url: 'https://abdul-bas.github.io/portfolio/' },
+    ],
+  },
+};
 
   /* ================= YOUR SKILLS =================
      s(name, icon, [project ids], level)

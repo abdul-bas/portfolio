@@ -1,12 +1,60 @@
 const tierFilters = ["featured", "mini", "other"];
-
 const projects = [
-  
+  // FEATURED FLUTTER PROJECTS
+
+  {
+    title: "ChoiceX – Customer App",
+    description:
+      "A multi-vendor e-commerce mobile application that enables customers to browse products, search and filter items, manage carts and wishlists, place orders, track order status, request returns and refunds, and complete purchases through Stripe integration. Built with Firebase services and state management solutions.",
+    image: "assets/images/projects_images/choice_x.png",
+    category: "flutter",
+    tier: "featured",
+    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "BLoC", "Provider", "Stripe"],
+    live: "https://apkpure.net/choicex/com.example.coice",
+    code: "https://github.com/abdul-bas/choiceX-user-"
+  },
+
+  {
+    title: "Thinksy AI",
+    description:
+      "An AI-powered chat application integrating Google Gemini API to generate intelligent responses. Features Firebase Authentication, conversation context handling, and a structured architecture using BLoC for state management and Dio for API communication.",
+    image: "assets/images/projects_images/thinksy_ai.png",
+    category: "flutter",
+    tier: "featured",
+    stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "Firebase Auth", "Dio", "Gemini API"],
+    live: "#",
+    code: ""
+  },
+
+  {
+    title: "Netflix Clone",
+    description:
+      "A Netflix-inspired movie discovery application featuring dynamic movie listings, trending content, upcoming releases, and search functionality. Integrated TMDB REST APIs using Dio, with BLoC state management, debounced search, and loading and error handling.",
+    image: "assets/images/projects_images/netflix_clone.png",
+    category: "flutter",
+    tier: "featured",
+    stack: ["Flutter", "Dart", "BLoC", "Dio", "REST APIs", "TMDB"],
+    live: "#",
+    code: "https://github.com/abdul-bas/court-click-mt"
+  },
+
+  {
+    title: "Expenzia – Expense Tracker",
+    description:
+      "An expense-tracking application designed to manage income and expenses, view transaction history, and monitor financial activity through an organized dashboard. Built using BLoC and Clean Architecture with a Figma-based user interface.",
+    image: "assets/images/projects_images/expenzia.png",
+    category: "flutter",
+    tier: "featured",
+    stack: ["Flutter", "Dart", "BLoC", "Clean Architecture"],
+    live: "#",
+    code: "https://github.com/abdul-bas/Expenzia",
+    design: "https://www.figma.com/design/WR6AeuIpBm5pI2i1RV7hYh/Flutter-Machine-Test--Copy-?t=YXs1U6DPGvo3rre3-0"
+  },
 
   {
     title: "Movie Review Hub",
     description:
-      "Movie Review Hub is a responsive movie review application built with Flutter, designed with separate Admin and User roles. Users can explore movies, view detailed information, watch trailers, rate movies, write reviews, and interact through comments. Admins can manage movie content using dynamic CRUD operations. The application includes authentication and uses Hive for efficient local data storage, providing a smooth and responsive user experience",
+      "A movie discovery and review application with separate Admin and User roles. Users can explore movies, watch trailers, rate movies, write reviews, and interact through comments. Admins can manage movie content through CRUD operations. Uses Hive and SharedPreferences for local data storage.",
     image: "assets/images/projects_images/movie_review_hub.png",
     category: "flutter",
     tier: "featured",
@@ -15,60 +63,12 @@ const projects = [
     code: "https://github.com/abdul-bas/movie_review_hub"
   },
 
-  {
-    title: "ChoiceX(user)",
-    description:
-      "ChoiceX is a full-stack e-commerce application developed with Flutter, focused on providing a smooth shopping experience for users. The user side allows customers to browse products, view product details, search and explore items, add products to the cart, manage their orders, and complete purchases through secure Stripe payment integration. Firebase is used for authentication and backend services, while the application follows a responsive and user-friendly interface for a seamless shopping experience",
-    image: "assets/images/projects_images/choice_x.png",
-    category: "flutter",
-    tier: "featured",
-    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "BLoC", "Provider"],
-    live: "https://apkpure.net/choicex/com.example.coice",
-    code: "https://github.com/abdul-bas/choiceX-user-"
-  },
+  // CHOICEX WEB APPLICATIONS
 
   {
-    title: "News Application",
+    title: "ChoiceX – Seller Dashboard",
     description:
-      "A news application with Firebase authentication, live news data from News API, and dynamic country-based configuration using Firebase Remote Config.",
-    image: "assets/images/projects_images/news_app.jpeg",
-    category: "flutter",
-    tier: "mini",
-    stack: ["Flutter", "Firebase", "News API", "Remote Config"],
-    live: "#",
-    code: "https://github.com/abdul-bas/news_app"
-  },
-
-  {
-    title: "To-Do List App",
-    description:
-      "A task management application that allows users to create, update, delete, and manage tasks using Firebase Cloud Firestore.",
-    image: "assets/images/projects_images/to_do_list.png",
-    category: "flutter",
-    tier: "mini",
-    stack: ["Flutter", "Dart", "Firestore", "CRUD"],
-    live: "#",
-    code: "https://github.com/abdul-bas/todo-list-app"
-  },
-
-  {
-    title: "Kiddo Learn Adventure",
-    description:
-      "An educational learning application for children featuring alphabet learning, quizzes, XP, coins, achievements, and interactive learning activities.",
-    image: "assets/images/projects_images/kidoo_img.jpeg",
-    category: "flutter",
-    tier: "mini",
-    stack: ["Flutter", "Dart", "UI/UX", "Quiz", "Gamification"],
-    live: "#",
-    code: "https://github.com/abdul-bas/meetup_app"
-  },
-
-  
-
-  {
-    title: "choice_x(seller)",
-    description:
-      "ChoiceX Seller is a Flutter Web application that provides sellers with a secure dashboard to manage their online store. It includes secure authentication, complete product CRUD operations, order management, return and refund handling, and an integrated chat system for communication. The dashboard provides sellers with a centralized platform to manage products, customer interactions, and orders efficiently.",
+      "A Flutter Web application that allows sellers to manage their stores through product and order management, return and refund handling, and customer communication using an integrated chat system.",
     image: "assets/images/projects_images/choice_x_seller.png",
     category: "flutter-web",
     tier: "featured",
@@ -76,10 +76,11 @@ const projects = [
     live: "https://choice8590-seller.web.app/",
     code: "https://github.com/abdul-bas/choice_X-seller-"
   },
+
   {
-    title: "choice_x(admin)",
+    title: "ChoiceX – Admin Dashboard",
     description:
-      "ChoiceX Admin is a Flutter Web application that provides a secure admin dashboard for managing the entire e-commerce platform. It includes secure authentication, product and category management with complete CRUD operations, user and seller management, order monitoring, return and refund management, and promotional features such as brand management and coupon management. The dashboard provides administrators with centralized control over products, categories, brands, users, sellers, orders, refunds, and promotional activities",
+      "A Flutter Web admin dashboard for managing the e-commerce platform, including products, categories, brands, users, sellers, orders, returns, refunds, and promotional coupons.",
     image: "assets/images/projects_images/choice_x_admin.png",
     category: "flutter-web",
     tier: "featured",
@@ -88,13 +89,64 @@ const projects = [
     code: "https://github.com/abdul-bas/choice_X-admin-"
   },
 
-  
+  // ADDITIONAL FLUTTER PROJECTS
+
+  {
+    title: "News Application",
+    description:
+      "A news application featuring Firebase Authentication, live news data through NewsAPI, and dynamic country-based configuration using Firebase Remote Config.",
+    image: "assets/images/projects_images/news_app.jpeg",
+    category: "flutter",
+    tier: "mini",
+    stack: ["Flutter", "Dart", "Firebase", "REST APIs", "Remote Config"],
+    live: "#",
+    code: "https://github.com/abdul-bas/news_app"
+  },
+
+  {
+    title: "To-Do List App",
+    description:
+      "A task management application that supports creating, updating, deleting, and managing tasks using Firebase Cloud Firestore.",
+    image: "assets/images/projects_images/to_do_list.png",
+    category: "flutter",
+    tier: "mini",
+    stack: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "CRUD"],
+    live: "#",
+    code: "https://github.com/abdul-bas/todo-list-app"
+  },
+
+  {
+    title: "Kiddo Learn Adventure",
+    description:
+      "An educational application for children featuring alphabet learning, interactive quizzes, XP, coins, achievements, and gamified learning activities.",
+    image: "assets/images/projects_images/kidoo_img.jpeg",
+    category: "flutter",
+    tier: "mini",
+    stack: ["Flutter", "Dart", "UI/UX", "Quizzes", "Gamification"],
+    live: "#",
+    code: "https://github.com/abdul-bas/meetup_app"
+  },
+
+  {
+    title: "Flutter Native Integration",
+    description:
+      "An exploration of Flutter and Android native integration using MethodChannel to access device features such as GPS, camera, and accelerometer.",
+    image: "assets/images/projects_images/native_features.png",
+    category: "flutter",
+    tier: "mini",
+    stack: ["Flutter", "Dart", "Android", "Kotlin", "MethodChannel"],
+    live: "#",
+    code: ""
+  },
+
+  // OTHER TECHNOLOGY PROJECTS
+
   {
     title: "7UP Website Clone",
     description:
-      "A responsive website clone inspired by the 7UP brand, developed using HTML and CSS. Recreated the main layout, sections, navigation, and brand-focused design with a responsive interface.",
+      "A responsive website recreation inspired by the 7UP brand, featuring its main layout, navigation, sections, and brand-focused design.",
     image: "assets/images/projects_images/7up.png",
-    category: "bootstrap",
+    category: "web",
     tier: "other",
     stack: ["HTML", "CSS"],
     live: "https://abdul-bas.github.io/7up_clone/",
@@ -104,9 +156,9 @@ const projects = [
   {
     title: "Kopiko Website Clone",
     description:
-      "A responsive website clone inspired by the Kopiko brand, developed using HTML, CSS, JavaScript, and Bootstrap. Recreated the website layout with responsive sections, navigation, and interactive elements.",
+      "A responsive website recreation inspired by the Kopiko brand, featuring responsive layouts, navigation, and interactive elements.",
     image: "assets/images/projects_images/kopiko.png",
-    category: "bootstrap",
+    category: "web",
     tier: "other",
     stack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     live: "https://abdul-bas.github.io/kopiko_responsive_web/",
@@ -116,17 +168,15 @@ const projects = [
   {
     title: "Tesla Website Clone",
     description:
-      "A responsive website clone inspired by Tesla, developed using HTML and CSS. Recreated the modern automotive-style layout with responsive sections, navigation, and clean user interface elements.",
+      "A responsive website recreation inspired by Tesla, featuring a modern automotive-style layout, navigation, and responsive sections.",
     image: "assets/images/projects_images/tesla.png",
-    category: "bootstrap",
+    category: "web",
     tier: "other",
     stack: ["HTML", "CSS"],
     live: "https://abdul-bas.github.io/tesla_clone/",
     code: "https://github.com/abdul-bas/tesla_clone"
   }
 ];
-
-
 
 const categoryLabels = {
   flutter: "Flutter App",
