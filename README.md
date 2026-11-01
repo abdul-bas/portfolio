@@ -107,10 +107,10 @@ cp .env.example .env
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-3.8-flash
+GEMINI_MODEL=gemini-3-flash-preview
 ```
 
-`GEMINI_MODEL` is optional and defaults to `gemini-3.8-flash`. The `.env` file is listed in `.gitignore` and must never be committed.
+`GEMINI_MODEL` is optional and defaults to `gemini-3-flash-preview`. The `.env` file is listed in `.gitignore` and must never be committed.
 
 ### 2. Firebase
 
