@@ -18,7 +18,7 @@ const projects = [
     title: "Thinksy AI",
     description:
       "An AI-powered chat application integrating Google Gemini API to generate intelligent responses. Features Firebase Authentication, conversation context handling, and a structured architecture using BLoC for state management and Dio for API communication.",
-    image: "assets/images/projects_images/thinksy_ai.png",
+    image: "assets/images/projects_images/2.png",
     category: "flutter",
     tier: "featured",
     stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "Firebase Auth", "Dio", "Gemini API"],
@@ -131,7 +131,7 @@ const projects = [
     title: "Flutter Native Integration",
     description:
       "An exploration of Flutter and Android native integration using MethodChannel to access device features such as GPS, camera, and accelerometer.",
-    image: "assets/images/projects_images/native_features.png",
+    image: "assets/images/projects_images/create-a-premium-3d-cartoon-illustration-for-an-em.png",
     category: "flutter",
     tier: "mini",
     stack: ["Flutter", "Dart", "Android", "Kotlin", "MethodChannel"],
