@@ -22,8 +22,8 @@ const projects = [
     category: "flutter",
     tier: "featured",
     stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "Firebase Auth", "Dio", "Gemini API"],
-    live: "#",
-    code: ""
+    live: "",
+    code: "https://github.com/abdul-bas/Thinksy-AI"
   },
 
   {
@@ -136,7 +136,7 @@ const projects = [
     tier: "mini",
     stack: ["Flutter", "Dart", "Android", "Kotlin", "MethodChannel"],
     live: "#",
-    code: ""
+    code: "https://github.com/abdul-bas/Native-Features"
   },
 
   // OTHER TECHNOLOGY PROJECTS
