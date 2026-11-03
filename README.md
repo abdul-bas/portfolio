@@ -234,9 +234,9 @@ Because everything is static, it also works on Netlify, Vercel or any other stat
 
 ## Connect With Me
 
-- **GitHub:** [github.com/abdul-bas](https://github.com/abdul-bas)
-- **LinkedIn:** [Abdul Basith](https://www.linkedin.com/in/abdul-basith-chempan-b17b09324/)
-- **LeetCode:** [leetcode.com/u/zvX54gmqAM](https://leetcode.com/u/zvX54gmqAM/)
+- **GitHub:** [abdul-bas](https://github.com/abdul-bas)
+- **LinkedIn:** [Abdul Basith Chempan](https://www.linkedin.com/in/abdul-basith-chempan-b17b09324/)
+- **LeetCode:** [LeetCode Profile](https://leetcode.com/u/zvX54gmqAM/)
 - **Location:** Kerala, India
 
 I'm currently open to **Flutter Developer** opportunities. Feel free to reach out through the contact form on the website.
