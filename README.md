@@ -1,160 +1,250 @@
-# Thinksy AI
+# Abdul Basith | Flutter & Web Developer Portfolio
 
-![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.4+-0175C2?logo=dart&logoColor=white)
-![State Management](https://img.shields.io/badge/State-Flutter%20BLoC-6C5CE7)
-![Firebase](https://img.shields.io/badge/Auth-Firebase-FFCA28?logo=firebase&logoColor=black)
+A responsive, dark-themed personal portfolio that showcases my Flutter applications, technical skills, certificates and education journey. It is built with plain HTML, CSS and JavaScript (no frameworks, no build step) and uses a **data-driven architecture**, so I can update my content by editing a few data files instead of touching the page markup.
 
-Thinksy AI is a cross-platform AI chat application built with Flutter and powered by the Google Gemini API. Users sign in with Firebase Authentication, ask questions, and receive AI-generated responses in a clean, modern chat interface.
+**Live website:** https://abdul-bas.github.io/portfolio/
+
+---
 
 ## Table of Contents
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Configuration](#configuration)
-- [Running the App](#running-the-app)
-- [Security Notes](#security-notes)
-- [Roadmap](#roadmap)
-- [Author](#author)
+- [Folder Structure](#folder-structure)
+- [How Each Section Works](#how-each-section-works)
+- [Updating the Content](#updating-the-content)
+- [Run Locally](#run-locally)
+- [Deployment](#deployment)
+- [Accessibility and Performance](#accessibility-and-performance)
+- [Connect With Me](#connect-with-me)
+
+---
 
 ## Features
 
-- **AI chat:** ask questions and get Gemini-generated answers, with conversation context maintained through `previous_interaction_id`
-- **Authentication:** email/password login, registration and password reset with Firebase Auth
-- **Session handling:** an auth gate routes users to the chat or login screen based on their sign-in state
-- **Splash screen:** animated launch screen
-- **Modern UI:** Material 3 design with light and dark themes, typing indicator and suggestion chips
-- **Error handling:** clear, user-friendly messages for network and authentication errors
+- **Hero** with a typewriter role animation, floating profile photo, "Open to Work" chip, social links and a downloadable resume.
+- **About** section with a tilted photo frame, a Brototype verified badge and a short introduction.
+- **Skills** grouped into 8 categories. Hovering or tapping a skill opens a popover showing the projects where I used it. A filter switches between *All*, *In projects* and *Familiar with*, and live stats are shown in the header.
+- **Projects** with filters (Featured, Mini, Other, Flutter Apps, Flutter Web), expandable cards with stack chips and Live/Code buttons, a floating "hanging" animation on desktop and a swipeable carousel on mobile.
+- **Certificates** with category filters, Google Drive thumbnails, a quick-preview dialog and cards that slide in alternately from the left and right.
+- **Education timeline** with an alternating two-sided layout, a line that fills as you scroll, and a highlighted card for my Flutter immersive training.
+- **Contact** section with a form that composes a pre-filled email through `mailto:`.
+- **Navigation** with a sticky header, active-section tracking and a slide-in mobile menu.
+- **Responsive** layout from large desktop down to small phones, with `prefers-reduced-motion` support.
+
+---
 
 ## Tech Stack
 
-| Area             | Technology                       |
-| ---------------- | -------------------------------- |
-| Framework        | Flutter (Dart 3.4+)              |
-| State management | `flutter_bloc` (BLoC only)       |
-| Networking       | `dio`                            |
-| Authentication   | `firebase_auth`, `firebase_core` |
-| Configuration    | `flutter_dotenv`                 |
-| Value equality   | `equatable`                      |
-| AI model         | Google Gemini (Interactions API) |
+| Area | Technology |
+|------|------------|
+| Markup | HTML5 (semantic sections, `<dialog>`, ARIA attributes) |
+| Styling | CSS3 (custom properties, Grid, Flexbox, `color-mix`, CSS columns, keyframe animations) |
+| Logic | Vanilla JavaScript (ES6+) |
+| Browser APIs | `IntersectionObserver`, `requestAnimationFrame`, `<dialog>`, `matchMedia` |
+| Icons | Font Awesome 6.5.2, Devicon, Iconify API (skill icons) |
+| Fonts | Sora, Inter, JetBrains Mono (Google Fonts) |
+| Documents | Google Drive (certificate previews and links) |
+| Hosting | GitHub Pages |
+
+---
 
 ## Architecture
 
-The project follows **Clean Architecture** and is organized by feature. Each feature has three layers:
+The portfolio follows a **data-driven, section-based architecture** with a clear separation of concerns:
 
-- **Domain:** entities, repository contracts and use cases (pure Dart, no framework dependencies)
-- **Data:** remote data sources and repository implementations
-- **Presentation:** BLoCs, pages and widgets
+1. **Data layer** (`data/`): plain JavaScript files that hold all content (projects, skills, certificates, education).
+2. **Logic layer** (`js/`): one script per section that reads the data and renders the UI into empty containers in `index.html`.
+3. **Presentation layer** (`css/`): one stylesheet per section, plus a shared `base.css` that holds the design tokens and global styles.
+4. **Shell** (`index.html`): a single page that defines the sections and empty mount points such as `#projectsGrid`, `#skills-grid`, `#certGrid` and `#eduTimeline`.
 
-Dependencies point inward: presentation depends on domain, and data implements domain contracts. The UI never calls an API directly.
-
-**Conventions**
-
-- Flutter BLoC is the only state management solution
-- No private methods or classes, and no underscores in method or class names
-
-## Project Structure
+### Data flow
 
 ```
-lib/
-├── main.dart
-├── core/
-│   ├── constants/        # API constants
-│   ├── error/            # Failure type
-│   ├── network/          # Dio client
-│   └── utils/            # Form status, validators
-└── features/
-    ├── splash/
-    │   └── presentation/ # SplashBloc, SplashPage
-    ├── auth/
-    │   ├── data/         # Firebase data source, repository implementation
-    │   ├── domain/       # AuthUser, AuthRepository, use cases
-    │   └── presentation/ # AuthBloc, Login/Register/ForgotPassword blocs, pages, widgets
-    └── chat/
-        ├── data/         # Gemini data source, repository implementation
-        ├── domain/       # ChatMessage, ChatReply, ChatRepository, SendMessage
-        └── presentation/ # ChatBloc, ChatPage, widgets
+ data/*.js                    js/*.js                      index.html
+ (content as JS objects)      (render + behaviour)         (empty mount points)
+ ───────────────────────      ────────────────────────     ─────────────────────
+ project_data.js     ───────► projects.js       ────────►  #projectsGrid, #filterRow
+ skills_data.js      ───────► skill.js          ────────►  #skills-grid, #skills-stats
+ certificate_data.js ───────► certificate.js    ────────►  #certGrid, #certFilters
+ education_data.js   ───────► education.js      ────────►  #eduTimeline, #eduFill
+                              main.js           ────────►  header, nav, scroll-reveal,
+                                                           contact form, footer year
 ```
 
-## Getting Started
+Every script waits for `DOMContentLoaded`, checks that its data and DOM containers exist, and then renders. If a section's data or markup is missing, the script exits quietly without breaking the rest of the page.
 
-### Prerequisites
+### Design decisions
 
-- Flutter SDK 3.x with Dart 3.4 or higher
-- A Firebase project
-- A Gemini API key from [Google AI Studio](https://aistudio.google.com/)
+- **No framework or build tooling.** The site is static, loads fast and can be hosted anywhere.
+- **Design tokens in `base.css`.** Colours, fonts, spacing, radii and easing are CSS variables on `:root`. Section stylesheets reuse them, so the theme stays consistent.
+- **Scoped styles.** Sections use prefixes (`cert-`, `edu-`, `skill-`, `project-`, `contact-`) to avoid style collisions.
+- **Safe rendering.** Dynamic text goes through an `esc()` helper that escapes HTML before it is inserted, and external links use `rel="noopener noreferrer"`.
+- **Graceful fallbacks.** A failed skill icon becomes a letter badge, a failed certificate preview becomes a placeholder, and links that are empty or `#` become disabled "Coming Soon" or "Link unavailable" buttons.
+- **Progressive enhancement.** Scroll animations are added by JavaScript only when `IntersectionObserver` is available and motion is not reduced, so content is never hidden if scripts fail.
+- **Single source of truth for relationships.** Each skill lists the project IDs that used it, so the popovers, "used in projects" counts and stats are all computed from the data.
 
-### Installation
+---
+
+## Folder Structure
+
+```
+portfolio/
+├── index.html
+├── README.md
+├── assets/
+│   ├── icons/
+│   ├── images/
+│   │   ├── projects_images/        # project screenshots
+│   │   ├── profile.png
+│   │   ├── mine_last.jpg
+│   │   ├── about_bg_img.png
+│   │   ├── flutter_dev.png
+│   │   ├── Verified Badge (1).png
+│   │   └── Skills_Cartoon_Icons-*.png   # decorative section backgrounds
+│   └── resume.pdf
+├── css/
+│   ├── base.css            # design tokens, reset, global utilities, reveal animations
+│   ├── head_nav.css        # fixed header and navigation
+│   ├── home.css            # hero section
+│   ├── about.css           # about section
+│   ├── skills.css          # skill cards, chips, popover
+│   ├── projects.css        # project cards, filters, mobile carousel
+│   ├── certificates.css    # certificate grid and preview dialog
+│   ├── education.css       # timeline
+│   └── contact.css         # contact form, footer, responsive rules
+├── data/
+│   ├── project_data.js     # projects, tier filters, category labels
+│   ├── skills_data.js      # SKILLS list and PROJECTS lookup used by popovers
+│   ├── certificate_data.js # certificate categories and entries
+│   └── education_data.js   # education timeline entries
+└── js/
+    ├── main.js             # header, nav, scroll-reveal, contact form
+    ├── projects.js         # project rendering, filtering, expand/collapse
+    ├── skill.js            # skill rendering, popover, filtering, stats
+    ├── certificate.js      # certificate rendering, filters, preview dialog
+    └── education.js        # timeline rendering and scroll-fill line
+```
+
+---
+
+## How Each Section Works
+
+### Hero and Navigation (`home.css`, `head_nav.css`, `main.js`)
+- The role text uses a CSS typewriter effect (`steps()` animation with a blinking cursor).
+- The header gains a blurred background after scrolling, and the active link follows the section in view using an `IntersectionObserver`.
+- On screens up to 768px the nav becomes a slide-in drawer controlled by a toggle button.
+
+### Skills (`skills_data.js`, `skill.js`, `skills.css`)
+- Skills are stored as `s(name, icon, [projectIds], level)`.
+- An empty project list marks a skill as **Familiar with** (dashed outline).
+- Icons come from the Iconify API, and cards use a masonry-style CSS column layout.
+- The popover follows its skill on scroll (via `requestAnimationFrame`), pins on click, and closes on `Esc` or an outside click.
+
+### Projects (`project_data.js`, `projects.js`, `projects.css`)
+- Each project has a `category` (flutter, flutter-web, web) and a `tier` (featured, mini, other), and the filter buttons use both.
+- Cards reveal on scroll, expand on hover, focus or tap, and are keyboard accessible (`Enter` / `Space`).
+- On mobile the grid turns into a horizontal scroll-snap carousel.
+
+### Certificates (`certificate_data.js`, `certificate.js`, `certificates.css`)
+- A Google Drive share link is converted into a thumbnail URL and a preview URL.
+- Clicking a thumbnail opens a native `<dialog>` containing the Drive preview, with an "Open in new tab" fallback.
+- The featured certificate spans the full grid width.
+
+### Education (`education_data.js`, `education.js`, `education.css`)
+- Entries alternate left and right on desktop and collapse to a single column with a left-hand line on tablet and mobile.
+- Nodes and cards animate in when scrolled into view, and the gradient line fills according to scroll progress.
+
+### Contact (`contact.css`, `main.js`)
+- Submitting the form validates the fields and opens the visitor's email client with the subject and message pre-filled. It needs no backend.
+
+---
+
+## Updating the Content
+
+All content lives in `data/`, so most updates need no HTML changes.
+
+**Add a project** in `data/project_data.js`:
+```js
+{
+  title: "My New App",
+  description: "What it does...",
+  image: "assets/images/projects_images/my_app.png",
+  category: "flutter",          // flutter | flutter-web | web
+  tier: "featured",             // featured | mini | other
+  stack: ["Flutter", "Dart"],
+  live: "",                     // empty or "#" shows "Coming Soon"
+  code: "https://github.com/abdul-bas/my-app"
+}
+```
+
+**Add a skill** in `data/skills_data.js`:
+```js
+s('Riverpod', 'logos:riverpod', ['myproject'], 'Basic')
+```
+If you use a project ID, add a matching entry to the `PROJECTS` object in the same file.
+
+**Add a certificate** in `data/certificate_data.js` by adding an object with `title`, `category`, `issuer`, `year` and a `driveUrl` (a Google Drive share link set to "Anyone with the link").
+
+**Add an education entry** in `data/education_data.js` using the `type`, `icon`, `title`, `period`, `fields` and `driveUrl` keys.
+
+---
+
+## Run Locally
+
+No installation is needed.
 
 ```bash
-git clone <your-repository-url>
-cd thinksy_ai
-flutter pub get
+# 1. Clone the repository
+git clone https://github.com/abdul-bas/portfolio.git
+cd portfolio
+
+# 2. Open index.html in your browser
+#    or serve it with any static server, for example:
+npx serve .
 ```
 
-## Configuration
+With VS Code you can also use the **Live Server** extension and click **Go Live**.
 
-### 1. Environment variables
+---
 
-Copy the example file and add your key:
+## Deployment
 
-```bash
-cp .env.example .env
-```
+The site is deployed with **GitHub Pages**:
 
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-3-flash-preview
-```
+1. Push the project to a GitHub repository.
+2. Open **Settings → Pages**.
+3. Choose the `main` branch and the `/ (root)` folder, then save.
+4. The site is published at `https://<username>.github.io/<repository>/`.
 
-`GEMINI_MODEL` is optional and defaults to `gemini-3-flash-preview`. The `.env` file is listed in `.gitignore` and must never be committed.
+Because everything is static, it also works on Netlify, Vercel or any other static host.
 
-### 2. Firebase
+---
 
-1. Create a Firebase project.
-2. Enable **Authentication > Sign-in method > Email/Password**.
-3. Connect the app:
-   ```bash
-   dart pub global activate flutterfire_cli
-   flutterfire configure
-   ```
-4. Initialize Firebase with the generated options in `main.dart`:
-   ```dart
-   await Firebase.initializeApp(
-     options: DefaultFirebaseOptions.currentPlatform,
-   );
-   ```
+## Accessibility and Performance
 
-### 3. Android
+- Semantic HTML with ARIA labels, `aria-expanded` and `aria-live` regions.
+- Visible `:focus-visible` outlines and full keyboard support for cards and filters.
+- `prefers-reduced-motion` support that disables heavy animations.
+- Lazy-loaded images and a lightweight, dependency-free codebase.
+- Mobile-first responsive breakpoints at 1024px, 900px, 860px, 768px, 640px, 560px and 480px.
 
-- Set `minSdk` to 23 or higher.
-- Make sure `AndroidManifest.xml` includes:
-  ```xml
-  <uses-permission android:name="android.permission.INTERNET" />
-  ```
+---
 
-## Running the App
+## Connect With Me
 
-```bash
-flutter run
-```
+- **GitHub:** [github.com/abdul-bas](https://github.com/abdul-bas)
+- **LinkedIn:** [Abdul Basith](https://www.linkedin.com/in/abdul-basith-chempan-b17b09324/)
+- **LeetCode:** [leetcode.com/u/zvX54gmqAM](https://leetcode.com/u/zvX54gmqAM/)
+- **Location:** Kerala, India
 
-## Security Notes
+I'm currently open to **Flutter Developer** opportunities. Feel free to reach out through the contact form on the website.
 
-- `.env` is bundled as an asset, so its values can be extracted from a release build. This is acceptable for development only.
-- For production, route Gemini requests through a backend service and keep the API key on the server.
+---
 
-## Roadmap
+## License
 
-- [ ] Google sign-in
-- [ ] Email verification
-- [ ] Persistent chat history
-- [ ] Streaming responses
-- [ ] Image input
+This project is open for learning and inspiration. If you use the layout or code, please give credit and replace the content, images and certificates with your own.
 
-## Author
-
-Built by **Basith**.
+&copy; Abdul Basith
