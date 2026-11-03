@@ -239,7 +239,11 @@ Because everything is static, it also works on Netlify, Vercel or any other stat
 - **LeetCode:** [LeetCode Profile](https://leetcode.com/u/zvX54gmqAM/)
 - **Location:** Kerala, India
 
-I'm currently open to **Flutter Developer** opportunities. Feel free to reach out through the contact form on the website.
+![Open to Work](https://img.shields.io/badge/Open%20to%20Work-Flutter%20Developer-22c55e?style=for-the-badge)
+ 
+> [!TIP]
+> 🟢 I'm currently open to **Flutter Developer** opportunities. Feel free to reach out through the contact form on the website.
+ 
 
 ---
 
