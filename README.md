@@ -1,4 +1,4 @@
-# Abdul Basith | Flutter & Web Developer Portfolio
+# Abdul Basith | Flutter Developer Portfolio
 
 A responsive, dark-themed personal portfolio that showcases my Flutter applications, technical skills, certificates and education journey. It is built with plain HTML, CSS and JavaScript (no frameworks, no build step) and uses a **data-driven architecture**, so I can update my content by editing a few data files instead of touching the page markup.
 
